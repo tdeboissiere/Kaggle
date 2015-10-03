@@ -5,7 +5,7 @@
 
 ##Prerequisites
 
-- Up to date versions of scipy, numpy, pandas and scikit-learn  
+- Up to date versions of scipy, numpy, pandas, xgboost and scikit-learn  
 - [sklearn-pandas](https://github.com/paulgb/sklearn-pandas) for easier preprocessing  
 - The excellent [lightfm](https://github.com/lyst/lightfm) library for hybrid matrix factorisation
 - [pysofia](https://github.com/fabianp/pysofia) for SVMRank
