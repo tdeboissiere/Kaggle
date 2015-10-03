@@ -1,9 +1,5 @@
 #Ponpare utilities
 
-
-## Evaluation metric
-Implement Mean Average Precision @ k
-
 ##Master script
 
 	python configure_competition.py
@@ -13,7 +9,8 @@ With this script :
 - Validation data sets are created (see below for details)
 - Preprocessing steps are carried out on the data and validation data (see below for details)
 
-N.B. It takes a while for all preprocessing steps to complete
+N.B. It takes a while for all preprocessing steps to complete.  
+The creation of validation sets and the preprocessing steps can be carried out individually (see below).
 
 ### Create validation data sets
 
@@ -39,6 +36,10 @@ This takes a while and needs quite a bit of memory.
 
 Clean, preprocess and transform the validation data for use in the various recommendation scripts.  
 This takes a while and needs quite a bit of memory.
+
+
+## Evaluation metric
+Implement Mean Average Precision @ k
 
 ##Run some checks on the data
 
