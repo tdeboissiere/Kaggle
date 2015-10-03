@@ -10,7 +10,7 @@ With this script :
 - Preprocessing steps are carried out on the data and validation data (see below for details)
 
 N.B. It takes a while for all preprocessing steps to complete.  
-The creation of validation sets and the preprocessing steps can be carried out individually (see below).
+**The creation of validation sets and the preprocessing steps can be carried out individually (see below).**
 
 ### Create validation data sets
 
