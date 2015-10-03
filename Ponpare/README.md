@@ -30,3 +30,6 @@ To use the code, follow these steps :
 4. cd /Ponpare_utilities && python configure_competition.py  
 5. cd /Ponpare_submission && python blending.py to create a submission file blending several models.    
 6. cd /Ponpare_validation && python script.py or python optimize_XXX.py to evaluate various models on validation data.    
+
+## ipython notebook example  
+A quick guide to using [lightfm](https://github.com/lyst/lightfm) library for hybrid matrix factorisation with the Ponpare data.
