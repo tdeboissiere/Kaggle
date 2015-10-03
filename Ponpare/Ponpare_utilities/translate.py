@@ -25,7 +25,7 @@ def translate():
 
 	# Path to files downloaded from Kaggle
 	path = "../Data/Data_japanese/" 
-	df = pd.read_excel(path + "CAPSULE_TEXT_Translation.xlsx",skiprows=5)
+	df = pd.read_excel(path + "/documentation/documentation/CAPSULE_TEXT_Translation.xlsx",skiprows=5)
 	
 	# Dict for feature "CAPSULE_TEXT" translation.
 	k = [ encode_text(x) for x in df["CAPSULE_TEXT"] ] 
@@ -71,3 +71,7 @@ def translate():
 			df["PREF_NAME"] = l
 		#Save file
 		df.to_csv("../Data/Data_translated/%s_translated.csv" % f,index = False)
+
+if __name__ == '__main__':
+	
+	translate()
