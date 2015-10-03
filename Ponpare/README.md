@@ -1,7 +1,7 @@
 #Ponpare competition
 
-![recruit](https://kaggle2.blob.core.windows.net/competitions/kaggle/4481/logos/front_page.png)  
-
+![recruit](http://www.recruit-rgf.com/news_data/release/img/20150716_01.jpg)  
+![ponpare](https://kaggle2.blob.core.windows.net/competitions/kaggle/4481/media/recruit_image.png)
 
 
 ##General information
