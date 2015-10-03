@@ -15,7 +15,7 @@ With this script :
 
 N.B. It takes a while for all preprocessing steps to complete
 
-## Create validation data sets
+### Create validation data sets
 
 	python create_validation.py
 
@@ -26,14 +26,14 @@ This creates a Validation/week_ID/ directory in Ponpare_submission.
 - It also saves python dict to store the actual purchases of each user as well as different user lists.
 
 
-##Data preprocessing (submission data)
+###Data preprocessing (submission data)
 
     python preprocessing_submission.py
 
 Clean, preprocess and transform the data for use in the various recommendation scripts.  
 This takes a while and needs quite a bit of memory.
 
-##Data preprocessing (validation data)
+###Data preprocessing (validation data)
 
     python preprocessing_validation.py
 
