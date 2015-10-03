@@ -12,6 +12,12 @@ With this script :
 N.B. It takes a while for all preprocessing steps to complete.  
 **The creation of validation sets and the preprocessing steps can be carried out individually (see below).**
 
+### Translation to English
+
+	python translate.py
+
+Translate the data in /Data/Data_japanese to English, output it to /Data/Data_translated
+
 ### Create validation data sets
 
 	python create_validation.py
