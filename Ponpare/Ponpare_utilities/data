@@ -1,0 +1,1166 @@
+
+
+<!DOCTYPE html>
+
+<!--[if lt IE 7 ]><html class="ie ie6 lte7 lte8 lte9"><![endif]-->
+<!--[if IE 7 ]><html class="ie ie7 lte7 lte8 lte9"><![endif]-->
+<!--[if IE 8 ]><html class="ie ie8 lte8 lte9"><![endif]-->
+<!--[if IE 9 ]><html class="ie ie9 lte9"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html ><!--<![endif]-->
+
+<head>
+    <link href='//fonts.googleapis.com/css?family=Merriweather:400,700|Open+Sans:300,400italic,700italic,400,700' rel='stylesheet' type='text/css'> 
+
+    
+    <link rel="stylesheet" href="/content/v/1fb55cec3f8f/shared/css/font-awesome.min.css">
+
+    
+    
+    <title>Data - Coupon Purchase Prediction | Kaggle</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="robots" content="index, follow" />
+    <link href="/content/v/4e3f994e938b/kaggle/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+    
+        <meta name="keywords" content="Kaggle, data science, big analytics, data mining, forecasting, statistics, prediction, bioinformatics, competitions, contests, crowdsourced analytics" />
+            <meta name="description" content="Kaggle is a platform for data prediction competitions. Companies, organizations and researchers post their data and have it scrutinized by the world&#39;s best statisticians." />
+
+            <link rel="stylesheet" href="/content/v/3351b2ff4c55/shared/css/base.less" type="text/css" />
+        <link rel="stylesheet" href="/content/v/4b4de64aa988/kaggle/css/kaggle-site.less" type="text/css" />
+
+        <script type="text/javascript" src="/content/v/47b68dce8cb6/shared/js/jquery-1.7.2.min.js"></script>
+            <script type="text/javascript" src="/content/v/7846b5904b60/shared/js/jquery-ui-1.9.2.min.js"></script>
+
+    
+        <script type="text/javascript" src="/content/v/a60ecf3c5c7d/shared/js/kaggle.min.js"></script>
+        <script type="text/javascript">
+            
+            Kaggle.Current.siteId = 1;
+                Kaggle.Current.competitionId = 4481;
+                    </script>
+
+    
+    <!--[if (gte IE 6)&(lte IE 8)]>
+        <script type="text/javascript" src="/content/v/f1f17fea7cee/shared/js/ie/selectivizr.min.js"></script>
+    <![endif]-->
+
+    
+                                            <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+    
+                                                                    
+                    <link rel="apple-touch-icon" href="/content/v/1e4cdaa83f46/kaggle/img/apple-touch-icon.png" />
+
+
+    
+    <!--[if lt IE 9]>
+        <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+</head>
+<body class="logged-out    kaggle">
+    <div id="watermark1" class=""></div>
+    <div id="watermark2" class=""></div>
+    <div id="wrap"><!-- needed for sticky footer -->
+
+
+<div id="menu-open-overlay"></div>
+
+<div id="header2" class="">
+    <div id="header2-inside" class=>
+        <a id="logo" href="/"><img alt="Kaggle" height="86" src="/content/v/d6801c936e94/kaggle/img/site-logo.png" width="240" /></a>
+
+            <ul id="header-ul">
+                <li>
+  <a href="/solutions/competitions">Host</a>
+</li>
+<li>
+  <a href="/competitions">Competitions</a>
+</li>
+<li>
+  <a href="/scripts">Scripts</a>
+</li>
+<li>
+  <a href="/jobs">Jobs</a>
+</li>
+<li>
+<a href="">Community &#9662;</a>
+<ul>
+  <li><a href='/users'>User Rankings</a></li>
+  <li><a href='/forums'>Forum</a></li>
+  <li><a href="http://blog.kaggle.com" target="_blank">Blog</a></li>
+  <li><a href='/Wiki'>Wiki</a></li>
+</ul>
+</li><!-- <script>
+  $(function(){
+    if (!$('body.logged-in').length) {
+      $('a.logged-in-only').hide().parent().next().find('a').css('padding-top','10px');
+    }
+  });
+</script> -->
+            </ul>
+
+        <script>
+            jQuery(function () {
+                jQuery('#header-ul li:has(ul) > a').click(function (e) {
+                    e.preventDefault();
+
+                    jQuery('#header-ul li').not(jQuery(this).parent()).find('ul').removeClass('open');
+                    jQuery(this).parent().find('ul').toggleClass('open');
+                    jQuery('#menu-open-overlay').show();
+                });
+
+                jQuery('#menu-open-overlay').click(function () {
+                    jQuery('#header-ul ul').removeClass('open');
+                    jQuery('#top-bar-signin').hide();
+                    jQuery(this).hide();
+                });
+
+            });
+        </script>
+
+        <ul id="header-control">
+                <li id="header-signup"><a href="/account/register"><strong><text>Sign up</text></strong></a></li>
+                <li id="header-login">
+                    <a href="/account/login?returnUrl=%2Fc%2Fcoupon-purchase-prediction%2Fdata" class="login-link">Login</a>
+                </li>
+        </ul>
+            <div id="top-bar-signin">
+                <div id="social-authentication-top">
+    <div id="social-authentication-top-head">
+        Log in<br/>
+        with &mdash;
+    </div>
+    <div id="social-authentication-top-buttons">
+        <a href="/account/authenticate/facebook" class="socialSignIn facebook" title="Log in with Facebook"><img src="/content/v/f5274345ad7a/shared/img/auth-facebook.png" width="36" height="36" alt="Sign up with Facebook" title="Sign up with Facebook" /></a>
+        <a href="/account/authenticate/google" class="socialSignIn google" title="Log in with Google"><img src="/content/v/d6df56991e32/shared/img/auth-google.png" width="36" height="36" alt="Sign up with Google" title="Sign up with Google" /></a>
+        <a href="/account/authenticate/yahoo" class="socialSignIn yahoo" title="Log in with Yahoo"><img src="/content/v/ca50427b37b7/shared/img/auth-yahoo.png" width="36" height="36" alt="Sign up with Yahoo" title="Sign up with Yahoo" /></a>
+    </div>
+    
+    <script type="text/javascript">
+        var socialSignInLinks = $('a.socialSignIn');
+        socialSignInLinks.attr("href", function(i,v){
+            return v + '?js=1';
+        });
+        socialSignInLinks.click(function(){
+            _gaq.push(['_trackEvent', 'action', 'login', 'top-bar']);
+            return true;
+        });
+    </script>
+</div>
+    
+
+<form action="/account/login" id="signin" method="post"><input id="returnUrl" name="returnUrl" type="hidden" value="https://www.kaggle.com/c/coupon-purchase-prediction/data" /><input data-val="true" data-val-length="The field User name must be a string with a minimum length of 2 and a maximum length of 255." data-val-length-max="255" data-val-length-min="2" data-val-required="The User name field is required." id="UserName" name="UserName" placeholder="Email / username" type="text" value="" /><span class="field-validation-valid" data-valmsg-for="UserName" data-valmsg-replace="true"></span><input data-val="true" data-val-length="The field Password must be a string with a minimum length of 1 and a maximum length of 255." data-val-length-max="255" data-val-length-min="1" data-val-required="The Password field is required." id="Password" name="Password" placeholder="Password" type="password" /><span class="field-validation-valid" data-valmsg-for="Password" data-valmsg-replace="true"></span>    <div id="remember-me">
+        <input data-val="true" data-val-required="The Remember me? field is required." id="RememberMe" name="RememberMe" type="checkbox" value="true" /><input name="RememberMe" type="hidden" value="false" />            
+        <label for="RememberMe">Remember me?</label>
+    </div>   
+    <input type="submit" value="Login" />
+<input name="__RequestVerificationToken" type="hidden" value="YrlBD-kRQANbaWySuxYsL0CS_RQbHG-2hUCX-TIj5vsfYK8zPXLIr0q6uVXhRjqbnbD1XBK5_nea52xvWXf2T_0rgnw1" />    <input id="signinjs" type="hidden" name="JavaScriptEnabled" value="false" />    
+</form>
+<script type="text/javascript">
+    $('#signinjs').attr('value', 'true');
+    $('#signin').submit(function () { _gaq.push(['_trackEvent', 'action', 'login', 'top-bar']); });
+</script>
+
+<div id="forgot-links">        
+    Forgot your <a href="/forgot/username">Username</a> 
+    / 
+    <a href="/forgot/password">Password</a>?
+</div>
+
+            </div>
+            <script>
+                jQuery(function () {
+                    jQuery('.login-link').click(function (e) {
+                        e.preventDefault();
+                        jQuery('#top-bar-signin').toggle();
+                        jQuery('#menu-open-overlay').toggle();
+                        if (jQuery('#top-bar-signin').is(":visible")) {
+                            jQuery('#UserName').focus();
+                        }
+                    });
+                });
+            </script>
+    </div>
+</div>
+
+
+
+
+
+
+
+        
+
+        <!-- header-inside and header -->
+            <div id="main">
+                
+
+
+
+
+
+<div id='competition' @Html.Attr('class', 'prospecting', competition.InProspectingPhase).Add(isPreview ? 'preview' : '')>                <header id="comp-header" >
+                    <a href="/c/coupon-purchase-prediction"><img id="comp-image" src="https://kaggle2.blob.core.windows.net/competitions/kaggle/4481/logos/front_page.png" alt="" /></a>
+                    <div id="comp-header-details">
+                        <h2>
+                                <span class="completed">Completed</span> &bull;
+
+                    $50,000 
+                        &bull; <a href="/c/coupon-purchase-prediction/leaderboard">1,076 teams</a>
+                </h2>
+                <h1><a href="/c/coupon-purchase-prediction">Coupon Purchase Prediction</a>
+                        </h1>
+
+                        
+
+                            <div id="comp-header-stats" class="finished">
+
+                                <div id="comp-header-stats-start">
+                                    Thu 16 Jul 2015
+                                </div>
+                                <div id="comp-header-stats-end">
+ &ndash;                                      Wed 30 Sep 2015
+                                        (3 days ago)
+                                </div>
+                            </div>
+                    </div>
+                </header>
+                <script type="text/javascript">
+                    jQuery(function ($) {
+                        $('#comp-header-details h1').textfill({ maxFontPixels: 26, innerTag: 'a' });
+                    });
+                </script>
+            <div class="comp-sidebar">
+                
+
+
+<div class="_panel" id="competition-dashboard">
+    <header>
+        <h1>Dashboard</h1>
+    </header>
+    <ul id="competition-dashboard-dropdown">
+        <li class="cd-home">
+            <a href="/c/coupon-purchase-prediction">Home</a>
+            <ul>
+                <li class="cd-data"><a href="/c/coupon-purchase-prediction/data">Data</a></li>
+
+                    <li class="cd-submit submission-link">
+                        <a class="comp-link" href="/c/coupon-purchase-prediction/submit">Make a submission</a>
+                    </li>
+            </ul>
+        </li>
+
+        <li class="cd-info">
+            <a id="open-info">Information</a>
+            <ul id="pages-flyout">
+                    <li>
+<a href="/c/coupon-purchase-prediction">Description</a>                    </li>
+                    <li>
+<a href="/c/coupon-purchase-prediction/details/evaluation">Evaluation</a>                    </li>
+                    <li>
+<a href="/c/coupon-purchase-prediction/rules">Rules</a>                    </li>
+                    <li>
+<a href="/c/coupon-purchase-prediction/details/prizes">Prizes</a>                    </li>
+                    <li>
+<a href="/c/coupon-purchase-prediction/details/timeline">Timeline</a>                    </li>
+
+            </ul>
+        </li>
+
+            <li class="cd-forum"><a href="/c/coupon-purchase-prediction/forums">Forum</a></li>
+
+            <li class="cd-scripts">
+                <a class="comp-link" href="/c/coupon-purchase-prediction/scripts">Scripts</a>
+                <ul class="flyout">
+                    <li><a href="/c/coupon-purchase-prediction/scripts/new">New Script</a></li>
+                </ul>
+            </li>
+
+            <li class="cd-leaderboard">
+                <a href="/c/coupon-purchase-prediction/leaderboard">Leaderboard</a>
+                    <ul class="flyout">
+                        <li><a href="/c/coupon-purchase-prediction/leaderboard/public">Public</a></li>
+                        <li><a href="/c/coupon-purchase-prediction/leaderboard/private">Private</a></li>
+                    </ul>
+            </li>
+
+
+
+
+    </ul>
+</div>
+
+    <script type="text/javascript">
+        $(function () {
+            $(".cd-data").addClass("selected");
+        });
+    </script>
+
+                
+                        <div id="partial-mini-leaderboard"></div>
+                        <script type="text/javascript">
+                            jQuery(function ($) {
+                                $("#partial-mini-leaderboard").load("/c/4481/partial/mini-leaderboard");
+                            });
+                        </script>
+                        <div id="partial-mini-scripts"></div>
+                        <script type="text/javascript">
+                            jQuery(function ($) {
+                                $("#partial-mini-scripts").load("/c/4481/scripts/hot/widget");
+                            });
+                        </script>
+
+
+    <div class="widget _panel" id="compside-discussions">
+        <header>
+            <h1><a href="/c/coupon-purchase-prediction/forums">Forum (103 topics)</a></h1>
+        </header>
+
+        <ul>
+                <li>
+                    <div class="post-title"><a href="/c/coupon-purchase-prediction/forums/t/16789/approach-sharing/95047#post95047">Approach sharing</a></div>
+                    <div class="post-time">1 hour ago</div>
+                </li>
+                <li>
+                    <div class="post-title"><a href="/c/coupon-purchase-prediction/forums/t/16736/what-s-your-guess-about-private-lb/94969#post94969">What&#39;s your guess about private LB?</a></div>
+                    <div class="post-time">yesterday</div>
+                </li>
+                <li>
+                    <div class="post-title"><a href="/c/coupon-purchase-prediction/forums/t/16744/congrats-to-the-winners/93902#post93902">Congrats to the winners!</a></div>
+                    <div class="post-time">2 days ago</div>
+                </li>
+                <li>
+                    <div class="post-title"><a href="/c/coupon-purchase-prediction/forums/t/16521/use-data-for-school-data-mining-research-project/93737#post93737">Use Data for School Data Mining Research Project (大学のデータマイニングの研究プロジェクトに出したデータを使う事について)</a></div>
+                    <div class="post-time">3 days ago</div>
+                </li>
+                <li>
+                    <div class="post-title"><a href="/c/coupon-purchase-prediction/forums/t/16715/test-the-model-when-the-competitios-is-over/93632#post93632">Test the model when the competitios is over</a></div>
+                    <div class="post-time">5 days ago</div>
+                </li>
+                <li>
+                    <div class="post-title"><a href="https://www.kaggle.com/fredhseymour/coupon-purchase-prediction/furthermodifiedcosine-007600/discussion/comment/93623#post93623">FurtherModifiedCosine(.007600)</a></div>
+                    <div class="post-time">5 days ago</div>
+                </li>
+        </ul>
+
+    </div> 
+                    <div id="partial-stats-ticker"></div>
+                    <script type="text/javascript">
+                        jQuery(function ($) {
+                            $("#partial-stats-ticker").load("/c/4481/partial/stats");
+                        });
+                    </script>
+            </div>
+    <div class="data---coupon-purchase-prediction-page comp-content with-sidebar _panel">
+            <header class='data'>
+                <div class="simple-steps">
+                    <a class="info" href="/c/coupon-purchase-prediction">Competition Details</a>
+                    &raquo;
+                    <a class="data" href="/c/coupon-purchase-prediction/data">Get the Data</a>
+                        &raquo;
+                        <a class="submit" href="/c/coupon-purchase-prediction/submit">Make a submission</a>
+                </div>
+                    </header>
+                <div class="comp-content-inside">
+                    <div id="competition-intro">
+
+                    </div>
+
+
+
+
+
+<h3>Data Files</h3>
+
+
+
+    <table id="data-files" class="nicetable full roomy align-top border">   
+        <thead>
+            <tr>
+                <th colspan="2">File Name</th> 
+                <th>Available Formats</th>         
+            </tr> 
+        </thead>
+
+            <tbody  >
+                <tr>
+
+                    <td class="file-name" colspan="2" rowspan="1">coupon_list_test.csv</td>
+                    <td>
+<a href="/c/coupon-purchase-prediction/download/coupon_list_test.csv.zip" name="coupon_list_test.csv.zip">.zip (11.60 kb)</a>                    </td>
+                </tr>
+
+            </tbody>
+            <tbody  >
+                <tr>
+
+                    <td class="file-name" colspan="2" rowspan="1">coupon_area_test.csv</td>
+                    <td>
+<a href="/c/coupon-purchase-prediction/download/coupon_area_test.csv.zip" name="coupon_area_test.csv.zip">.zip (13.98 kb)</a>                    </td>
+                </tr>
+
+            </tbody>
+            <tbody  >
+                <tr>
+
+                    <td class="file-name" colspan="2" rowspan="1">coupon_list_train.csv</td>
+                    <td>
+<a href="/c/coupon-purchase-prediction/download/coupon_list_train.csv.zip" name="coupon_list_train.csv.zip">.zip (656.17 kb)</a>                    </td>
+                </tr>
+
+            </tbody>
+            <tbody  >
+                <tr>
+
+                    <td class="file-name" colspan="2" rowspan="1">coupon_area_train.csv</td>
+                    <td>
+<a href="/c/coupon-purchase-prediction/download/coupon_area_train.csv.zip" name="coupon_area_train.csv.zip">.zip (832.26 kb)</a>                    </td>
+                </tr>
+
+            </tbody>
+            <tbody  >
+                <tr>
+
+                    <td class="file-name" colspan="2" rowspan="1">sample_submission.csv</td>
+                    <td>
+<a href="/c/coupon-purchase-prediction/download/sample_submission.csv.zip" name="sample_submission.csv.zip">.zip (399.71 kb)</a>                    </td>
+                </tr>
+
+            </tbody>
+            <tbody  >
+                <tr>
+
+                    <td class="file-name" colspan="2" rowspan="1">coupon_detail_train.csv</td>
+                    <td>
+<a href="/c/coupon-purchase-prediction/download/coupon_detail_train.csv.zip" name="coupon_detail_train.csv.zip">.zip (7.32 mb)</a>                    </td>
+                </tr>
+
+            </tbody>
+            <tbody  >
+                <tr>
+
+                    <td class="file-name" colspan="2" rowspan="1">user_list.csv</td>
+                    <td>
+<a href="/c/coupon-purchase-prediction/download/user_list.csv.zip" name="user_list.csv.zip">.zip (627.16 kb)</a>                    </td>
+                </tr>
+
+            </tbody>
+            <tbody  >
+                <tr>
+
+                    <td class="file-name" colspan="2" rowspan="1">documentation</td>
+                    <td>
+<a href="/c/coupon-purchase-prediction/download/documentation.zip" name="documentation.zip">.zip (21.59 kb)</a>                    </td>
+                </tr>
+
+            </tbody>
+            <tbody  >
+                <tr>
+
+                    <td class="file-name" colspan="2" rowspan="1">coupon_visit_train.csv</td>
+                    <td>
+<a href="/c/coupon-purchase-prediction/download/coupon_visit_train.csv.zip" name="coupon_visit_train.csv.zip">.zip (84.53 mb)</a>                    </td>
+                </tr>
+
+            </tbody>
+            <tbody  >
+                <tr>
+
+                    <td class="file-name" colspan="2" rowspan="1">prefecture_locations</td>
+                    <td>
+<a href="/c/coupon-purchase-prediction/download/prefecture_locations.csv" name="prefecture_locations.csv">.csv (2.00 kb)</a>                    </td>
+                </tr>
+
+            </tbody>
+    </table>
+    <script type="text/javascript">
+        $(function () {
+
+            // Decorate obselete files
+            $('#data-files a.obsolete').each(function () {
+                var obsoleteMsg = "Superseded by newer version";
+                if ($(this).data('msg')) {
+                    obsoleteMsg = $(this).attr('data-msg');
+                }
+
+                $(this).attr('title', obsoleteMsg);
+            });
+
+            // If we have a search parameter, try to immediately download the
+            // file of that name.
+            var search = this.location.search;
+            if (search.length) {
+                var selector = "#data-files a[name=\"" + search.substr(1) + "\"]";
+                var fileLink = $(selector);
+                if (fileLink.length == 1) {
+                        this.location = fileLink.prop("href");
+                }
+            }
+        });
+    </script>
+
+<div class="cms-page">
+    
+
+    <p>You are provided with a year of transactional data for 22,873 users on the site ponpare.jp. The training set spans the dates 2011-07-01 to 2012-06-23. The test set spans the week after the end of the training set, 2012-06-24 to 2012-06-30. The goal of the competition is to recommend a ranked list of coupons for each user in the dataset (found in <em>user_list.csv</em>). Your predictions are scored against the actual coupon purchases, made during the test set week, of the 310 possible test set coupons.</p>
+<h2>File descriptions</h2>
+<p>The dataset has relational format, with hashed ID columns for each entity.</p>
+<ul>
+<ul>
+<li><strong>user_list.csv</strong> - the master list of users in the dataset</li>
+</ul>
+</ul>
+<table class="script-output-csv display compact dataTable no-footer">
+<tbody>
+<tr><th>Column Name</th><th>Description</th><th>Type</th><th>Length</th><th>Decimal</th><th>Note</th></tr>
+<tr>
+<td>USER_ID_hash</td>
+<td>User ID</td>
+<td>VARCHAR2</td>
+<td>32</td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td>REG_DATE</td>
+<td>Registered date</td>
+<td>DATE</td>
+<td> </td>
+<td> </td>
+<td>Sign up date</td>
+</tr>
+<tr>
+<td>SEX_ID</td>
+<td>Gender</td>
+<td>CHAR</td>
+<td>1</td>
+<td> </td>
+<td>f = female　m = male</td>
+</tr>
+<tr>
+<td>AGE</td>
+<td>Age</td>
+<td>NUMBER</td>
+<td>4</td>
+<td>0</td>
+<td> </td>
+</tr>
+<tr>
+<td>WITHDRAW_DATE</td>
+<td>Unregistered date</td>
+<td>DATE</td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td>PREF_NAME</td>
+<td>Residential Prefecture</td>
+<td>VARCHAR2</td>
+<td>2</td>
+<td> </td>
+<td>[JPN] Not registered if empty</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<ul>
+<li><strong>coupon_list_train.csv</strong> - the master list of coupons which are considered part of the training set</li>
+<li><strong>coupon_list_test.csv</strong> - the master list of coupons which are considered part of the test set. Your competition predictions should be sourced only from these 310 coupons. You will not receive credit for predicting training set coupons that were purchased during the test set period.</li>
+</ul>
+</ul>
+<table class="script-output-csv display compact dataTable no-footer">
+<tbody>
+<tr><th>Column Name</th><th>Description</th><th>Type</th><th>Length</th><th>Decimal</th><th>Note</th><th> </th><th> </th><th> </th></tr>
+<tr>
+<td>CAPSULE_TEXT</td>
+<td>Capsule text</td>
+<td>VARCHAR2</td>
+<td>20</td>
+<td> </td>
+<td>[JPN]</td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td>GENRE_NAME</td>
+<td>Category name</td>
+<td>VARCHAR2</td>
+<td>50</td>
+<td> </td>
+<td>[JPN]</td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td>PRICE_RATE</td>
+<td>Discount rate</td>
+<td>NUMBER</td>
+<td>4</td>
+<td>0</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td>CATALOG_PRICE</td>
+<td>List price</td>
+<td>NUMBER</td>
+<td>10</td>
+<td>0</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td>DISCOUNT_PRICE</td>
+<td>Discount price</td>
+<td>NUMBER</td>
+<td>10</td>
+<td>0</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td>DISPFROM</td>
+<td>Sales release date</td>
+<td>DATE</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td>DISPEND</td>
+<td>Sales end date</td>
+<td>DATE</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td>DISPPERIOD</td>
+<td>Sales period (day)</td>
+<td>NUMBER</td>
+<td>4</td>
+<td>0</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td>VALIDFROM</td>
+<td>The term of validity starts</td>
+<td>DATE</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td>VALIDEND</td>
+<td>The term of validity ends</td>
+<td>DATE</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td>VALIDPERIOD</td>
+<td>Validity period (day)</td>
+<td>NUMBER</td>
+<td>4</td>
+<td>0</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td>USABLE_DATE_MON</td>
+<td>Is available on Monday</td>
+<td>CHAR</td>
+<td>1</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td>USABLE_DATE_TUE</td>
+<td>Is available on Tuesday</td>
+<td>CHAR</td>
+<td>1</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td>USABLE_DATE_WED</td>
+<td>Is available on Wednesday</td>
+<td>CHAR</td>
+<td>1</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td>USABLE_DATE_THU</td>
+<td>Is available on Thursday</td>
+<td>CHAR</td>
+<td>1</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td>USABLE_DATE_FRI</td>
+<td>Is available on Friday</td>
+<td>CHAR</td>
+<td>1</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td>USABLE_DATE_SAT</td>
+<td>Is available on Saturday</td>
+<td>CHAR</td>
+<td>1</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td>USABLE_DATE_SUN</td>
+<td>Is available on Sunday</td>
+<td>CHAR</td>
+<td>1</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td>USABLE_DATE_HOLIDAY</td>
+<td>Is available on holiday</td>
+<td>CHAR</td>
+<td>1</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td>USABLE_DATE_BEFORE_HOLIDAY</td>
+<td>Is available on the day before holiday</td>
+<td>CHAR</td>
+<td>1</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td>large_area_name</td>
+<td>Large area name of shop location</td>
+<td>VARCHAR2</td>
+<td>30</td>
+<td> </td>
+<td>[JPN]</td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td>ken_name</td>
+<td>Prefecture name of shop</td>
+<td>VARCHAR2</td>
+<td>8</td>
+<td> </td>
+<td>[JPN]</td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td>small_area_name</td>
+<td>Small area name of shop location</td>
+<td>VARCHAR2</td>
+<td>30</td>
+<td> </td>
+<td>[JPN]</td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td>COUPON_ID_hash</td>
+<td>Coupon ID</td>
+<td>VARCHAR2</td>
+<td>32</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<ul>
+<ul>
+<li><strong>coupon_visit_train.csv</strong> - the viewing log of users browsing coupons during the training set time period. You are not provided this table for the test set period.</li>
+</ul>
+</ul>
+</ul>
+<table class="script-output-csv display compact dataTable no-footer">
+<tbody>
+<tr><th>Column Name</th><th>Description</th><th>Type</th><th>Length</th><th>Decimal</th><th>Note</th><th> </th><th> </th><th> </th></tr>
+<tr>
+<td>PURCHASE_FLG</td>
+<td>Purchased flag</td>
+<td>NUMBER</td>
+<td>1</td>
+<td>0</td>
+<td>0:Not purchased 1:Purchased</td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td>PURCHASEID_hash</td>
+<td>Purchase ID</td>
+<td>VARCHAR2</td>
+<td>128</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td>I_DATE</td>
+<td>View date</td>
+<td>DATE</td>
+<td> </td>
+<td> </td>
+<td>Purchase date if purchased</td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td>PAGE_SERIAL</td>
+<td> </td>
+<td>VARCHAR2</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td>REFERRER_hash</td>
+<td>Referer</td>
+<td>VARCHAR2</td>
+<td>4000</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td>VIEW_COUPON_ID_hash</td>
+<td>Browsing Coupon ID</td>
+<td>VARCHAR2</td>
+<td>128</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td>USER_ID_hash</td>
+<td>User ID</td>
+<td>VARCHAR2</td>
+<td>10</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td>SESSION_ID_hash</td>
+<td>Session ID</td>
+<td>VARCHAR2</td>
+<td>128</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<ul>
+<li><strong>coupon_detail_train.csv</strong> - the purchase log of users buying coupons during the training set time period. You are not provided this table for the test set period.</li>
+</ul>
+</ul>
+<table class="script-output-csv display compact dataTable no-footer">
+<tbody>
+<tr><th>Column Name</th><th>Description</th><th>Type</th><th>Length</th><th>Decimal</th><th>Note</th><th> </th><th> </th><th> </th></tr>
+<tr>
+<td>ITEM_COUNT</td>
+<td>Purchased item count</td>
+<td>NUMBER</td>
+<td>10</td>
+<td>0</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td>I_DATE</td>
+<td>Purchase date</td>
+<td>DATE</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td>SMALL_AREA_NAME</td>
+<td>Small area name</td>
+<td>VARCHAR2</td>
+<td>30</td>
+<td> </td>
+<td>[JPN] User redidential area name</td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td>PURCHASEID_hash</td>
+<td>Purchase ID</td>
+<td>VARCHAR2</td>
+<td>32</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td>USER_ID_hash</td>
+<td>User ID</td>
+<td>VARCHAR2</td>
+<td>32</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td>COUPON_ID_hash</td>
+<td>Coupon ID</td>
+<td>VARCHAR2</td>
+<td>32</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<ul>
+<li><strong>coupon_area_train.csv</strong> - the coupon listing area for the training set coupons</li>
+<li><strong>coupon_area_test.csv</strong> - the coupon listing area for the test set coupons</li>
+</ul>
+</ul>
+<table class="script-output-csv display compact dataTable no-footer">
+<tbody>
+<tr><th>Column Name</th><th>Description</th><th>Type</th><th>Length</th><th>Decimal</th><th>Note</th><th> </th><th> </th><th> </th></tr>
+<tr>
+<td>SMALL_AREA_NAME</td>
+<td>Small area name</td>
+<td>VARCHAR2</td>
+<td>30</td>
+<td> </td>
+<td>[JPN]</td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td>PREF_NAME</td>
+<td>Listed prefecture name</td>
+<td>VARCHAR2</td>
+<td>8</td>
+<td> </td>
+<td>[JPN]</td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td>COUPON_ID</td>
+<td>Coupon ID</td>
+<td>VARCHAR2</td>
+<td>32</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>sample_submission.csv</strong> - a sample file showing the correct format for predictions</li>
+<li><strong>documentation.zip</strong> - an archive of Excel files containing an entity relationship diagram and English translations</li>
+</ul>
+<p><img src="https://kaggle2.blob.core.windows.net/competitions/kaggle/4481/media/recruit1.png" alt="" width="650" height="360" /></p>
+</div>
+
+                </div>
+            </div>  
+        </div>
+    
+
+
+            </div>
+    </div> <!-- wrap -->
+    
+        <div id="footer">
+            <div id="footer-inside">
+                <div id="footer-social">
+                        <div id="social-links">
+            <a class="twitter" href="http://www.twitter.com/kaggle" title="Follow Kaggle on Twitter"></a>     
+                    <a class="facebook" href="http://www.facebook.com/kaggle" title="Follow Kaggle on Facebook"></a>           
+                    <a class="linkedin" href="http://www.linkedin.com/companies/kaggle" title="Follow Kaggle on LinkedIn"></a>        
+    </div><!-- social-links -->
+
+                </div>
+                <div id="footer-copyright">
+                    
+
+
+&copy; 2015 Kaggle Inc                </div>
+                <div id="footer-links">
+                    <a href="/about">About</a>
+<a href="/team">Our Team</a>
+<a href="/careers">Careers</a>
+<a href="/terms">Terms</a>
+<a href="/privacy">Privacy</a> 
+<!--<a href="/Home/ContactPress">Press</a>-->
+<a href="/Home/contact">Contact/Support</a>
+                </div> <!-- footer-links -->
+            </div> <!-- footer-inside -->
+        </div> <!--footer-->
+
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({
+                "HTML-CSS": {
+                    preferredFont: "TeX",
+                    availableFonts: ["STIX","TeX"],
+                    linebreaks: {
+                        automatic: true
+                    },
+                    EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+                },
+                tex2jax: {
+                    inlineMath: [ ["\\\\(","\\\\)"] ],
+                    displayMath: [ ["$$","$$"], ["\\[", "\\]"] ],
+                    processEscapes: true,
+                    ignoreClass: "tex2jax_ignore|dno"
+                },
+                TeX: {
+                    noUndefined: {
+                        attributes: {
+                            mathcolor: "red",
+                            mathbackground: "#FFEEEE",
+                            mathsize: "90%"
+                        }
+                    }
+                },
+                messageStyle: "none"
+            });
+        </script>
+        
+        <script type="text/javascript">
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-12629138-1']);
+            _gaq.push(['_trackPageview']);
+            _gaq.push(['_trackPageLoadTime']);
+            _gaq.push(['_setCustomVar', 1, 'usertype', 'anonymous', 2]);
+            (function () {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+        </script>
+        <script type="text/javascript">
+            /**
+        * Function that tracks a click on an outbound link in Google Analytics.
+        * This function takes a valid URL string as an argument, and uses that URL string
+        * as the event label.
+        * See: https://support.google.com/analytics/answer/1136920?hl=en
+        */
+            var trackOutboundLink = function(url) {
+                ga('send', 'event', 'outbound', 'click', url, {'hitCallback':
+                        function () {
+                            document.location = url;
+                        }
+                });
+            }
+        </script>
+
+
+    
+
+    <!-- Cheers, RD00155D48503Ap. -->
+</body>
+</html>
