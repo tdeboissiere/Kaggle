@@ -3,7 +3,7 @@
 ![recruit](http://www.recruit-rgf.com/news_data/release/img/20150716_01.jpg)
 - [Ponpare](https://github.com/tdeboissiere/Kaggle/tree/master/Ponpare) : A coupon recommendation competition
 
-![prudential](https://www.google.com.au/imgres?imgurl=https://myaequalis.com/assets/img/Prudential_Financial.png&imgrefurl=https://myaequalis.com/&h=307&w=1280&tbnid=iNx6QJooCk1j-M:&docid=-Aj42qaq0Mh3sM&ei=NGfeVpH4N4W00gTSpKnwBg&tbm=isch&ved=0ahUKEwiR4rzSsbDLAhUFmpQKHVJSCm4QMwgdKAEwAQ)
+![prudential](https://www.google.com.au/imgres?imgurl=http://www.news.prudential.com/images/20026/media_gallery/Pru_Vert_RGB.jpg&imgrefurl=http://www.news.prudential.com/&h=540&w=480&tbnid=NeO7Dn0Yp_dVAM:&docid=v_ueiMsx0Z863M&ei=NGfeVpH4N4W00gTSpKnwBg&tbm=isch&ved=0ahUKEwiR4rzSsbDLAhUFmpQKHVJSCm4QMwghKAUwBQ)
 
 - [Prudential]() : A client risk assessment competition
 
