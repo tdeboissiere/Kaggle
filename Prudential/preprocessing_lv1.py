@@ -18,8 +18,8 @@ def compute_distance_feat():
 
 	"""
 	# Get data
-	df_train = pd.read_csv("../Data/train.csv")
-	df_test = pd.read_csv("../Data/test.csv")
+	df_train = pd.read_csv("./Data/Raw/train.csv")
+	df_test = pd.read_csv("./Data/Raw/test.csv")
 
 	# Save then drop Id and y
 	Id_train = df_train["Id"].values
@@ -438,6 +438,9 @@ def combine_files(file_name):
 
 if __name__ == "__main__":
 
+	compute_distance_feat()
+
+	## Uncomment once level1 files are created
 	# combine_files("test")	
 	# combine_files("train")
 	pass
