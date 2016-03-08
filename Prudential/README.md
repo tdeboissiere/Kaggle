@@ -34,3 +34,4 @@ The general idea to get predictions is to :
 8. Then run `python get_bayes_feat.py` to create Bayes inspired features for lv2 models
 9. Then `python train_lv2.py` to build lv2 models, check CV score and/or build submissions    
 
+The final solution I submitted is a majority vote of a combination of models produced from this scripts.
