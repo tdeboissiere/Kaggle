@@ -6,4 +6,4 @@
 
 ![prudential](./Images/prudential.png)
 
-- [Prudential]() : A client risk assessment competition
+- [Prudential](https://github.com/tdeboissiere/Kaggle/tree/master/Prudential) : A client risk assessment competition
