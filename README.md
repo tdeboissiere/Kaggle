@@ -1,3 +1,3 @@
 #Kaggle competitions repository
 
-![kaggle](kaggle_logo.png =100x20)
+![kaggle](kaggle_logo_small.png)
