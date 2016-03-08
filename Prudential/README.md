@@ -31,5 +31,6 @@ The general idea to get predictions is to :
 5. Then cd .. and run `python preprocessing_lv1.py` to compute correlation features
 6. Then `python train_lv1.py` to build lv1 features (regression/classification output of a first batch of models)
 7. Then uncomment the lines at the bottom of `python preprocessing_lv1.py` to create a single level1 feature file
-8. Then `python train_lv2.py` to build lv2 models, check CV score and/or build submissions    
+8. Then run `python get_bayes_feat.py` to create Bayes inspired features for lv2 models
+9. Then `python train_lv2.py` to build lv2 models, check CV score and/or build submissions    
 
