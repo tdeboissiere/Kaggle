@@ -42,15 +42,15 @@ However if you follow the guidelines below you should be fine
 
 # Examples
 
-*N.B. The VGG weights have not been trained on the Kaggle dataset !*
+**N.B. The VGG weights have not been trained on the Kaggle dataset !**
 
-Below, the top 9 images activating a selection of filter in convolutional layer 10.
+Below, the top 9 images activating a selection of filters in convolutional layer 10.
 Each block is 2x3x3 (1 block: original crop of the image, 1 block: deconvolution result)
 Each 2x3x3 block corresponds to a specific feature map
 
 ![conv10](./Figures/convolution2d_10.png)  
 
-Below, the top 9 images activating a selection of filter in convolutional layer 13.
+Below, the top 9 images activating a selection of filters in convolutional layer 13.
 Each block is 2x3x3 (1 block: original crop of the image, 1 block: deconvolution result)
 Each 2x3x3 block corresponds to a specific feature map
 
