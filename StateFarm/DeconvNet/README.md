@@ -1,7 +1,7 @@
 # Implementation of the Deconvnet algorithm
 
 N.B. It's still early days for this code so contributions are welcome !
-However if you follow the guidelines below you should be fine
+However if you follow the guidelines below you should be fine.
 
 # Requirements
 
@@ -46,14 +46,14 @@ However if you follow the guidelines below you should be fine
 
 Below, the top 9 images activating a selection of filters in convolutional layer 10.
 Each block is 2x3x3 (1 block: original crop of the image, 1 block: deconvolution result)
-Each 2x3x3 block corresponds to a specific feature map
+Each 2x3x3 block corresponds to a specific feature map.
 
 ![conv10](./Figures/convolution2d_10.png)  
 
 Below, the top 9 images activating a selection of filters in convolutional layer 13.
 Each block is 2x3x3 (1 block: original crop of the image, 1 block: deconvolution result)
-Each 2x3x3 block corresponds to a specific feature map
+Each 2x3x3 block corresponds to a specific feature map.
 
 ![conv13](./Figures/convolution2d_13.png)
 
-It's interesting to investigate what each feature map is looking for in the original image, for instance, the top right block of convolutional layer 13 strongly reacts to the stirring wheel.
+It's interesting to investigate what each feature map is looking for in the original image. For instance, the top right block of convolutional layer 13 strongly reacts to the steering wheel.
