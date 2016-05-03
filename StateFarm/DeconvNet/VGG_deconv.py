@@ -112,7 +112,7 @@ if __name__ == "__main__":
     data = np.array(data)
 
     ###############################################
-    # Get max activation for a slection of feat maps
+    # Action 1) Get max activation for a slection of feat maps
     ###############################################
     get_max_act = False
     if get_max_act:
@@ -133,7 +133,7 @@ if __name__ == "__main__":
                 pickle.dump(d_act, f)
 
     ###############################################
-    # Get deconv images of images that maximally activate
+    # Action 2) Get deconv images of images that maximally activate
     # the feat maps selected in the step above
     ###############################################
     deconv_img = False
@@ -147,10 +147,10 @@ if __name__ == "__main__":
         get_deconv_images(d_act_path, d_deconv_path, data, Dec)
 
     ###############################################
-    # Get deconv images of images that maximally activate
+    # Action 3) Get deconv images of images that maximally activate
     # the feat maps selected in the step above
     ###############################################
-    plot_deconv_img = True
+    plot_deconv_img = False
     if plot_deconv_img:
         d_act_path = './Data/dict_top9_mean_act.pickle'
         d_deconv_path = './Data/dict_top9_deconv.npz'
@@ -158,7 +158,7 @@ if __name__ == "__main__":
         plot_max_activation(d_act_path, d_deconv_path, data, target_layer, save=True)
 
     ###############################################
-    # Get deconv images of some images for some
+    # Action 4) Get deconv images of some images for some
     # feat map
     ###############################################
     deconv_specific = False
@@ -169,5 +169,6 @@ if __name__ == "__main__":
             Dec = KerasDeconv.DeconvNet(model)
         target_layer = "convolution2d_13"
         feat_map = 12
-        img_index = np.random.choice(data.shape[0], 25, replace=False)
+        num_img = 25
+        img_index = np.random.choice(data.shape[0], num_img, replace=False)
         plot_deconv(img_index, data, Dec, target_layer, feat_map)
