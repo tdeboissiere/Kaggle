@@ -35,7 +35,7 @@ if __name__ == "__main__":
     semi_super_file = "fullframe_VGG_test.h5"
     semi_super_file = os.path.join(data_dir, semi_super_file)
 
-    pretr_weights_file = "vgg16_weights_adversarial_fine_tune.h5"
+    pretr_weights_file = "vgg16_weights.h5"
     pretr_weights_file = os.path.join(external_dir, pretr_weights_file)
 
     tr_weights_file = ""
@@ -43,7 +43,6 @@ if __name__ == "__main__":
 
     model_name = "VGG_semisupervised"
     experiment = "Experiment_4"
-    augmentation_type = "cv2"
     start_fold = 0
 
     if "VGG" in model_name:
@@ -90,8 +89,7 @@ if __name__ == "__main__":
                 "tr_weights_path": tr_weights_path,
                 "model_archi_file": model_archi_file,
                 "normalisation_style": normalisation_style,
-                "start_fold": start_fold,
-                "augmentation_type": augmentation_type
+                "start_fold": start_fold
                 }
 
     # Launch submission

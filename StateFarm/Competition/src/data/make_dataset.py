@@ -121,7 +121,7 @@ def img_to_HDF5(tf_type, pretrained_file=None):
     with h5py.File(hdf5_file, "w") as hf:
         # Read a submission file
         if pretrained_file:
-            df_test = pd.read_csv("../../reports/submissions/geom_resnet_E14-15-16.csv")
+            df_test = pd.read_csv(pretrained_file)
         else:
             list_test_img = [os.path.basename(imgt) for imgt in glob.glob(os.path.join(raw_dir, "test/*"))]
             df_test = pd.DataFrame(np.array(list_test_img), columns=["img"])
@@ -183,5 +183,6 @@ if __name__ == '__main__':
     assert "DATA_DIR" in os.environ, data_msg
 
     tf_type = "resize_VGG"
+    pretrained_file = None  # Previous submission with soft target for test images
 
-    img_to_HDF5(tf_type)
+    img_to_HDF5(tf_type, pretrained_file)
