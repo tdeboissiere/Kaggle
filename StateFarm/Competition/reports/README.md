@@ -1,0 +1,1 @@
+Directory where reports are stored. This includes figures, submissions etc.

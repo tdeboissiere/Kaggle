@@ -1,0 +1,1 @@
+Directory where external (like model weights or normalizations) files are stored

@@ -1,0 +1,1 @@
+Directory where all codes are stored. This is divided into data (for data crunching operations) utils (general code utilities) and model (ML models)
