@@ -2,19 +2,19 @@
 
 ## Dependencies
 
-To manage the environment
+**To manage the environment:**
 python-dotenv
 
-General:
+**General:**
 pandas numpy scipy matplotlib h5py
 
-For parallell processing:
+**For parallell processing:**
 parmap
 
-For machine learning:
+**For machine learning:**
 keras, lasagne scikit-learn, theano
 
-For image manipulation
+**For image manipulation**
 opencv3, scikit image, pillow
 
 ## Project organisation
@@ -42,22 +42,23 @@ opencv3, scikit image, pillow
 
 ## Setup
 
-Data
+**Data**
 
 - Download data from Kaggle, unzip and put it in data/raw
 - You should then have a train folder, a test folder and the file listing the drivers `driver_imgs_list.csv`
 
-Pre-trained models
+**Pre-trained models**
 
-Download the following
+Download the following:
 
--[VGG16](https://gist.github.com/baraldilorenzo/07d7802847aaad0a35d3)
--[VGG19](https://gist.github.com/baraldilorenzo/8d096f48a1be4a2d660d)
--[resnet50](https://github.com/Lasagne/Recipes/tree/master/examples/resnet50)
+- [VGG16](https://gist.github.com/baraldilorenzo/07d7802847aaad0a35d3)
+- [VGG19](https://gist.github.com/baraldilorenzo/8d096f48a1be4a2d660d)
+- [resnet50](https://github.com/Lasagne/Recipes/tree/master/examples/resnet50)
+
 
 and put it in data/external
 
-ENV
+**ENV**
 
 in the projects root directory, create a .env file as follows
 
