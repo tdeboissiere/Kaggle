@@ -2,6 +2,8 @@
 
 ![prudential](../Images/statefarm.png) 
 
+**N.B.** Code for Deconvolutional network moved to: [this repository](https://github.com/tdeboissiere/DeepLearningImplementations)
+
 # Instructions
 
 ## Dependencies
